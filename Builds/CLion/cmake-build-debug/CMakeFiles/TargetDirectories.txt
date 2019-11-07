@@ -1,0 +1,3 @@
+/home/synthly/Documents/SynthlyOS/Builds/CLion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/synthly/Documents/SynthlyOS/Builds/CLion/cmake-build-debug/CMakeFiles/APP.dir
+/home/synthly/Documents/SynthlyOS/Builds/CLion/cmake-build-debug/CMakeFiles/edit_cache.dir

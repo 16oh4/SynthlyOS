@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT name="SynthlyOS" companyName="IMAGINE_Electronics" version="1.0.0"
+              userNotes="Operating System to run on Synthly." companyWebsite="https://16oh4.com"
+              defines="" projectType="guiapp" id="PHgoCW" splashScreenColour="Light"
+              jucerVersion="5.4.4">
+  <MAINGROUP id="V9RMLj" name="SynthlyOS">
+    <GROUP id="{3274C34F-C4BA-8E3A-D053-76FF252517F2}" name="Source">
+      <FILE id="ZLHM2g" name="AppFooter.h" compile="0" resource="0" file="Source/AppFooter.h"/>
+      <FILE id="P9xAo3" name="AppHeader.h" compile="0" resource="0" file="Source/AppHeader.h"/>
+      <FILE id="ciEOWP" name="Helpers.h" compile="0" resource="0" file="Source/Helpers.h"/>
+      <GROUP id="{FBC974D2-8CA6-9831-45C0-2BFF24B18FA0}" name="Images">
+        <FILE id="YjwGHa" name="midi.png" compile="0" resource="1" file="Icons/midi.png"/>
+        <FILE id="Vsjls1" name="waves.png" compile="0" resource="1" file="Icons/waves.png"/>
+        <FILE id="UyBakZ" name="tracks.png" compile="0" resource="1" file="Icons/tracks.png"/>
+        <FILE id="ssbScE" name="sampler.png" compile="0" resource="1" file="Icons/sampler.png"/>
+        <FILE id="paoOVI" name="pattern.png" compile="0" resource="1" file="Icons/pattern.png"/>
+        <FILE id="LtlwKC" name="effects.png" compile="0" resource="1" file="Icons/effects.png"/>
+        <FILE id="o12v7w" name="mixer.png" compile="0" resource="1" file="Icons/mixer.png"/>
+        <FILE id="I8y3O9" name="play_button.png" compile="0" resource="1" file="Icons/play_button.png"/>
+        <FILE id="ENJ56I" name="battery_icon2.png" compile="0" resource="1"
+              file="Icons/battery_icon2.png"/>
+        <FILE id="iIB6rL" name="cube_button2.png" compile="0" resource="1"
+              file="Icons/cube_button2.png"/>
+        <FILE id="Jmo1Hy" name="pause_button.png" compile="0" resource="1"
+              file="Icons/pause_button.png"/>
+        <FILE id="YlIkO2" name="back_button.png" compile="0" resource="1" file="Icons/back_button.png"/>
+      </GROUP>
+      <FILE id="pwmzOe" name="Homescreen.h" compile="0" resource="0" file="Source/Homescreen.h"/>
+      <FILE id="dgyvbB" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="ZNuAdm" name="Palette.h" compile="0" resource="0" file="Source/Palette.h"/>
+      <FILE id="gtdm6a" name="Main.h" compile="0" resource="0" file="Source/Main.h"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <EXPORTFORMATS>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="SynthlyOS"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="SynthlyOS"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path=""/>
+        <MODULEPATH id="juce_audio_devices" path=""/>
+        <MODULEPATH id="juce_audio_formats" path=""/>
+        <MODULEPATH id="juce_audio_processors" path=""/>
+        <MODULEPATH id="juce_audio_utils" path=""/>
+        <MODULEPATH id="juce_core" path=""/>
+        <MODULEPATH id="juce_data_structures" path=""/>
+        <MODULEPATH id="juce_events" path=""/>
+        <MODULEPATH id="juce_graphics" path=""/>
+        <MODULEPATH id="juce_gui_basics" path=""/>
+        <MODULEPATH id="juce_gui_extra" path=""/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
+    <CLION targetFolder="Builds/CLion" clionMakefileEnabled="1">
+      <MODULEPATHS>
+        <MODULEPATH id="juce_gui_extra" path="../../juce"/>
+        <MODULEPATH id="juce_gui_basics" path="../../juce"/>
+        <MODULEPATH id="juce_graphics" path="../../juce"/>
+        <MODULEPATH id="juce_events" path="../../juce"/>
+        <MODULEPATH id="juce_data_structures" path="../../juce"/>
+        <MODULEPATH id="juce_core" path="../../juce"/>
+        <MODULEPATH id="juce_audio_utils" path="../../juce"/>
+        <MODULEPATH id="juce_audio_processors" path="../../juce"/>
+        <MODULEPATH id="juce_audio_formats" path="../../juce"/>
+        <MODULEPATH id="juce_audio_devices" path="../../juce"/>
+        <MODULEPATH id="juce_audio_basics" path="../../juce"/>
+      </MODULEPATHS>
+    </CLION>
+  </EXPORTFORMATS>
+  <JUCEOPTIONS/>
+  <LIVE_SETTINGS>
+    <LINUX buildEnabled="1"/>
+  </LIVE_SETTINGS>
+</JUCERPROJECT>
