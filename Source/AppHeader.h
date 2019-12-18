@@ -9,15 +9,13 @@
 class AppHeader : public Component
 {
 public:
-    AppHeader(String name)
+    AppHeader()
     {
         //appName.setButtonText(name);
         //addAndMakeVisible(appName, 0);
 
-        //add current app name
-        appLabel.setText(name, NotificationType::dontSendNotification);
-        appLabel.setJustificationType(Justification::centredLeft);
-        addAndMakeVisible(appLabel, 0);
+        initLabels();
+
     }
     void paint(Graphics& g) override
     {
@@ -37,9 +35,27 @@ public:
         //Add the Home Title button at the far left
         appLabel.setBounds(area.removeFromLeft(appNameWidth).reduced(appNameMargin));
     }
+
+    void setAppLabel(const String& name)
+    {
+        appLabel.setText(name, NotificationType::dontSendNotification);
+    }
+
+
 private:
-    //TextButton appName;
+    //VARIABLES
     Label appLabel;
+
+    const String appName = "Footer";
+
+    void initLabels()
+    {
+        //add current app name
+        appLabel.setText("HOME", dontSendNotification);
+        appLabel.setJustificationType(Justification::centredLeft);
+        addAndMakeVisible(appLabel, 0);
+
+    }
 };
 
 

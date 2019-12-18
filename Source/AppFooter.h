@@ -15,46 +15,11 @@ public:
                     volumeLevel("GAIN", DrawableButton::ImageFitted)
     {
 
-        //Setup ImageButtons with images
-        Helpers::setupImageButton(backButton, "back_button_png");
-        addAndMakeVisible(backButton,0);
 
-        Helpers::setupImageButton(pauseButton, "pause_button_png");
-        addAndMakeVisible(pauseButton,0);
+        initImageButtons();
 
-        Helpers::setupImageButton(playButton, "play_button_png");
-        addAndMakeVisible(playButton,0);
+        initLabels();
 
-        Helpers::setupImageButton(cubeButton, "cube_button2_png");
-        addAndMakeVisible(cubeButton,0);
-
-        Helpers::setupImageButton(batteryButton, "battery_icon2_png");
-        addAndMakeVisible(batteryButton, 0);
-
-
-        //TODO: parametrically change channel name
-        //volumeLabel.setFont(labelFont);
-        volumeLabel.setText("MAIN",
-                NotificationType::dontSendNotification);
-        volumeLabel.setJustificationType(Justification::left);
-        addAndMakeVisible(volumeLabel, 0);
-
-        addAndMakeVisible(volumeLevel);
-
-        /*
-        volumeButton.setButtonText("MAIN");
-        volumeButton.setOpaque(false);
-        volumeButton.setConnectedEdges(15); //all edges should be rigid, not rounded
-        volumeButton.setState(ButtonState::)
-         addAndMakeVisible(volumeButton, 0);
-        */
-
-        /*
-        volumeText.setText("MAIN");
-        volumeText.setColour(Colours::black);
-        volumeText.setJustification(Justification::centred);
-         addAndMakeVisible(volumeText, 0);
-        */
 
     }
     void paint(Graphics& g) override
@@ -91,20 +56,53 @@ public:
         //Add gain level of master channel
         volumeLevel.setBounds(area.removeFromLeft(subSubSectionWidth).reduced(margin));
 
-
     }
+
+    ImageButton backButton, playButton, pauseButton, cubeButton, batteryButton;
 private:
     //TextButton volumeButton;
     //DrawableText volumeText;
     Font labelFont;
     Label volumeLabel;
-    ImageButton backButton, playButton, pauseButton, cubeButton, batteryButton;
+
     DrawableButton volumeLevel;
     Image backIMG, playIMG, pauseIMG, cubeIMG, batteryIMG;
 
 
+    const String appName = "Footer";
 
 
+
+    void initImageButtons()
+    {
+        //Setup ImageButtons with images
+        Helpers::setupImageButton(backButton, "back_button_png");
+        addAndMakeVisible(backButton,0);
+
+        Helpers::setupImageButton(pauseButton, "pause_button_png");
+        addAndMakeVisible(pauseButton,0);
+
+        Helpers::setupImageButton(playButton, "play_button_png");
+        addAndMakeVisible(playButton,0);
+
+        Helpers::setupImageButton(cubeButton, "cube_button2_png");
+        addAndMakeVisible(cubeButton,0);
+
+        Helpers::setupImageButton(batteryButton, "battery_icon2_png");
+        addAndMakeVisible(batteryButton, 0);
+    }
+
+    void initLabels()
+    {
+        //TODO: parametrically change channel name
+        //volumeLabel.setFont(labelFont);
+        volumeLabel.setText("MAIN",
+                            NotificationType::dontSendNotification);
+        volumeLabel.setJustificationType(Justification::left);
+        addAndMakeVisible(volumeLabel, 0);
+
+        addAndMakeVisible(volumeLevel);
+    }
     //Deprecated
     void setupImages()
     {

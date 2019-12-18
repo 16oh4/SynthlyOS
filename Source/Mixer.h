@@ -1,1 +1,63 @@
-/*  ==============================================================================  This is an automatically generated GUI class created by the Projucer!  Be careful when adding custom code to these files, as only the code within  the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded  and re-saved.  Created with Projucer version: 5.4.4  ------------------------------------------------------------------------------  The Projucer is part of the JUCE library.  Copyright (c) 2017 - ROLI Ltd.  ==============================================================================*/#pragma once//[Headers]     -- You can add your own extra header files here --#include "JuceHeader.h"//[/Headers]//==============================================================================/**                                                                    //[Comments]    An auto-generated component, created by the Projucer.    Describe your class and how it works here!                                                                    //[/Comments]*/class Mixer  : public Component{public:    //==============================================================================    Mixer ();    ~Mixer();    //==============================================================================    //[UserMethods]     -- You can add your own custom methods in this section.    //[/UserMethods]    void paint (Graphics& g) override;    void resized() override;private:    //[UserVariables]   -- You can add your own custom variables in this section.    //[/UserVariables]    //==============================================================================    //==============================================================================    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Mixer)};//[EndFile] You can add extra defines here...//[/EndFile]
+/*
+  ==============================================================================
+
+    Mixer.h
+    Created: 25 Nov 2019 12:23:57pm
+    Author:  synthly
+
+  ==============================================================================
+*/
+
+#pragma once
+#include "Pattern.h"
+
+class Mixer : public MixerAudioSource, public Component
+{
+public:
+    Mixer()
+    {
+        inst1 = std::make_unique<Pattern>();
+        addAndMakeVisible(*inst1);
+
+        //inst2 = std::make_unique<Pattern>();
+        //addAndMakeVisible(*inst2);
+
+    }
+    ~Mixer()
+    {
+
+    }
+
+    void resized() override
+    {
+        auto fullArea = getLocalBounds();
+        auto fullAreaHeight = fullArea.getHeight();
+
+        inst1->setBounds(fullArea.removeFromTop(fullAreaHeight));
+        //inst2->setBounds(fullArea.removeFromTop(fullAreaHeight/4));
+        //inst1->setBounds(fullArea.removeFromTop(fullAreaHeight/4));
+        //inst2->setBounds(fullArea.removeFromTop(fullAreaHeight/4));
+    }
+    void paint(Graphics& g) override
+    {
+
+    }
+    void prepareToPlay(int samplesPerBlockExpected, double sampleRate) override
+    {
+        Logger::outputDebugString("Prepare to play for MIXER");
+
+        inst1->prepareToPlay(samplesPerBlockExpected, sampleRate);
+        //inst2->prepareToPlay(samplesPerBlockExpected, sampleRate);
+
+        addInputSource(inst1.get(), false);
+        //addInputSource(inst2.get(), false);
+    }
+    void releaseResources() override
+    {
+        inst1 = nullptr;
+        //inst2 = nullptr;
+    }
+private:
+    std::unique_ptr<Pattern> inst1;
+    //std::unique_ptr<Pattern> inst2;
+};

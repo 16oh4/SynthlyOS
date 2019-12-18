@@ -5,6 +5,7 @@
 #ifndef SYNTHLYOS_HELPERS_H
 #define SYNTHLYOS_HELPERS_H
 
+
 //Static class to provide reusable methods for components
 class Helpers : public Component
 {
